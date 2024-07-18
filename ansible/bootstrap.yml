@@ -62,11 +62,12 @@
 
 - hosts: "{{ hosts| default('all') }}"
   become: yes
-  gather_facts: no
+  gather_facts: yes
   ignore_unreachable: yes
   vars_files:
     - "{{inventory_dir}}/secrets.yml"
   roles:
-    - vm-agents-nodeexporter
+    - vm-agents-processexporter
   tags:
-    - node_exporter
+    - process_exporter
+
