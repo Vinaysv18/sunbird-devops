@@ -111,3 +111,13 @@ process_names:
     cmdline:
     - .+middlemanager.+
 {% endif %}
+################################################################################################################################################
+{% if 'Postgres-ps' in group_names and hostvars[inventory_hostname]['ansible_default_ipv4']['address'] in groups['Postgres-ps'] %}
+  - name: "Postgres"
+    comm:
+    - java
+    cmdline:
+    - .+Postgres.+
+{% endif %}
+
+
