@@ -111,7 +111,6 @@ process_names:
     cmdline:
     - .+middlemanager.+
 {% endif %}
-################################################################################################################################################
 {% if 'Postgres-ps' in group_names and hostvars[inventory_hostname]['ansible_default_ipv4']['address'] in groups['Postgres-ps'] %}
   - name: "Postgres"
     comm:
@@ -119,5 +118,14 @@ process_names:
     cmdline:
     - .+Postgres.+
 {% endif %}
+{% if 'Neo4J-ps' in group_names and hostvars[inventory_hostname]['ansible_default_ipv4']['address'] in groups['Neo4J-ps'] %}
+  - name: "Neo4J"
+    comm:
+    - java
+    cmdline:
+    - .+Neo4J.+
+{% endif %}
+
+
 
 
