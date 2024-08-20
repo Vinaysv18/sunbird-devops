@@ -67,7 +67,7 @@
   vars_files:
     - "{{inventory_dir}}/secrets.yml"
   roles:
-    - sunbird-monitoring
+    - vm-agent-kafka-exporte
   tags:
     - kafka_exporter
 
