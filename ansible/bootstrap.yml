@@ -67,7 +67,7 @@
   vars_files:
     - "{{inventory_dir}}/secrets.yml"
   roles:
-    - vm-agent-kafka-exporte
+    - vm-agents-processexporter
   tags:
-    - kafka_exporter
+    - process_exporter
 
