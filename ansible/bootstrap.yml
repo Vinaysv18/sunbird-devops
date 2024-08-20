@@ -69,5 +69,5 @@
   roles:
     - sunbird-monitoring
   tags:
-    - process_exporter
+    - kafka_exporter
 
