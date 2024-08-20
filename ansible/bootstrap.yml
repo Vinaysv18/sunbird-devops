@@ -67,7 +67,7 @@
   vars_files:
     - "{{inventory_dir}}/secrets.yml"
   roles:
-    - vm-agents-processexporter
+    - sunbird-monitoring
   tags:
     - process_exporter
 
