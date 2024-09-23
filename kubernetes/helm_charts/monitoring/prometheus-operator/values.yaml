@@ -2277,15 +2277,14 @@ prometheusOperator:
     #   replacement: $1
     #   action: replace
 
-## Resource limits & requests
-
-resources:
-  limits:
-    cpu: 2000m      # 2 Cores
-    memory: 6Gi     # 6 GB RAM
-  requests:
-    cpu: 1000m      # 1 core
-    memory: 4Gi     # 4 GB RAM
+  ## Resource limits & requests
+  ##
+  # limits:
+  #   cpu: 200m
+  #   memory: 200Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 100Mi
 
   # Required for use in managed kubernetes clusters (such as AWS EKS) with custom CNI (such as calico),
   # because control-plane managed by AWS cannot communicate with pods' IP CIDR and admission webhooks are not working
