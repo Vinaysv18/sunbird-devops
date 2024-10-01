@@ -2412,9 +2412,9 @@ prometheusOperator:
   ##
   # alertmanagerDefaultBaseImageRegistry: quay.io
 
-  ## Prometheus-config-reloader
-  ##
- prometheusConfigReloader:
+## Prometheus-config-reloader
+##
+prometheusConfigReloader:
   image:
     registry: quay.io
     repository: prometheus-operator/prometheus-config-reloader
@@ -2426,15 +2426,14 @@ prometheusOperator:
   enableProbe: false
 
   # resource config for prometheusConfigReloader
-  resources: {}
+  resources:
     requests:
       cpu: 200m
       memory: 50Mi
     limits:
       cpu: 200m
       memory: 50Mi
-
-
+      
     # resource config for prometheusConfigReloader
     #resources: {}
       # requests:
