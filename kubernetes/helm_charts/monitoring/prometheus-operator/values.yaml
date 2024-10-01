@@ -2279,6 +2279,7 @@ prometheusOperator:
 
   ## Resource limits & requests
   ##
+  resources: {}
   # limits:
   #   cpu: 200m
   #   memory: 200Mi
@@ -2286,15 +2287,6 @@ prometheusOperator:
   #   cpu: 100m
   #   memory: 100Mi
 
-## Resource limits & requests
-  ##
-  limits:
-    cpu: 200m
-    memory: 200Mi
-  requests:
-    cpu: 100m
-    memory: 100Mi
-  
   # Required for use in managed kubernetes clusters (such as AWS EKS) with custom CNI (such as calico),
   # because control-plane managed by AWS cannot communicate with pods' IP CIDR and admission webhooks are not working
   ##
@@ -2412,37 +2404,28 @@ prometheusOperator:
   ##
   # alertmanagerDefaultBaseImageRegistry: quay.io
 
-## Prometheus-config-reloader
-##
-prometheusConfigReloader:
-  image:
-    registry: quay.io
-    repository: prometheus-operator/prometheus-config-reloader
-    # if not set appVersion field from Chart.yaml is used
-    tag: ""
-    sha: ""
+  ## Prometheus-config-reloader
+  ##
+  prometheusConfigReloader:
+    image:
+      registry: quay.io
+      repository: prometheus-operator/prometheus-config-reloader
+      # if not set appVersion field from Chart.yaml is used
+      tag: ""
+      sha: ""
 
-  # add prometheus config reloader liveness and readiness probe. Default: false
-  enableProbe: false
+    # add prometheus config reloader liveness and readiness probe. Default: false
+    enableProbe: false
 
-  # resource config for prometheusConfigReloader
-  resources:
-    requests:
-      cpu: 200m
-      memory: 50Mi
-    limits:
-      cpu: 200m
-      memory: 50Mi
-      
     # resource config for prometheusConfigReloader
-    #resources: {}
+    resources: {}
       # requests:
       #   cpu: 200m
       #   memory: 50Mi
       # limits:
       #   cpu: 200m
       #   memory: 50Mi
-      
+
   ## Thanos side-car image when configured
   ##
   thanosImage:
