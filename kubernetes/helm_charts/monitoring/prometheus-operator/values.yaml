@@ -2287,13 +2287,13 @@ prometheusOperator:
   #   memory: 100Mi
 
 ## Resource limits & requests
-##
-limits:
-  cpu: "500m"
-  memory: "1Gi"
-requests:
-  cpu: "1"
-  memory: "1Gi"
+  ##
+  limits:
+    cpu: 200m
+    memory: 200Mi
+  requests:
+    cpu: 100m
+    memory: 100Mi
   
   # Required for use in managed kubernetes clusters (such as AWS EKS) with custom CNI (such as calico),
   # because control-plane managed by AWS cannot communicate with pods' IP CIDR and admission webhooks are not working
@@ -2433,6 +2433,13 @@ requests:
       # limits:
       #   cpu: 200m
       #   memory: 50Mi
+
+        requests:
+          cpu: 200m
+          memory: 50Mi
+        limits:
+          cpu: 200m
+          memory: 50Mi
 
   ## Thanos side-car image when configured
   ##
