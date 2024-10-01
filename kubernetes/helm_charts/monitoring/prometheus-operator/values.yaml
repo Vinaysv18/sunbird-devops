@@ -2434,13 +2434,13 @@ prometheusOperator:
       #   cpu: 200m
       #   memory: 50Mi
       
-    resources: {}
-      requests:
-        cpu: 200m
-        memory: 50Mi
-      limits:
-        cpu: 200m
-        memory: 50Mi
+   resources:
+  requests:
+    cpu: 200m
+    memory: 50Mi
+  limits:
+    cpu: 200m
+    memory: 50Mi
 
   ## Thanos side-car image when configured
   ##
