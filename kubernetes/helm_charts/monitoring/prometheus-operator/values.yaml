@@ -2414,16 +2414,26 @@ prometheusOperator:
 
   ## Prometheus-config-reloader
   ##
-  prometheusConfigReloader:
-    image:
-      registry: quay.io
-      repository: prometheus-operator/prometheus-config-reloader
-      # if not set appVersion field from Chart.yaml is used
-      tag: ""
-      sha: ""
+ prometheusConfigReloader:
+  image:
+    registry: quay.io
+    repository: prometheus-operator/prometheus-config-reloader
+    # if not set appVersion field from Chart.yaml is used
+    tag: ""
+    sha: ""
 
-    # add prometheus config reloader liveness and readiness probe. Default: false
-    enableProbe: false
+  # add prometheus config reloader liveness and readiness probe. Default: false
+  enableProbe: false
+
+  # resource config for prometheusConfigReloader
+  resources: {}
+    requests:
+      cpu: 200m
+      memory: 50Mi
+    limits:
+      cpu: 200m
+      memory: 50Mi
+
 
     # resource config for prometheusConfigReloader
     #resources: {}
@@ -2434,14 +2444,6 @@ prometheusOperator:
       #   cpu: 200m
       #   memory: 50Mi
       
-   resources:
-  requests:
-    cpu: 200m
-    memory: 50Mi
-  limits:
-    cpu: 200m
-    memory: 50Mi
-
   ## Thanos side-car image when configured
   ##
   thanosImage:
